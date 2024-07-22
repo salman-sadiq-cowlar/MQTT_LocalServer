@@ -119,5 +119,12 @@ static void mqtt_app_start(void)
 
 void app_main(void)
 {
+    nvs_flash_init();
+    wifi_connection();
+
+    vTaskDelay(2000 / portTICK_PERIOD_MS);
+    printf("WIFI was initiated ...........\n");
+
+    mqtt_app_start();
 
 }
